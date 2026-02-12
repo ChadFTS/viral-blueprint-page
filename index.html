@@ -789,17 +789,40 @@ blockquote.quote-large {
 <!-- Calendly Floating Button -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
-/* Mobile: Make the floating CTA button much larger */
+/* Hide Calendly badge on mobile, show custom button */
 @media (max-width: 768px) {
-    .calendly-badge-widget .calendly-badge-content {
-        font-size: 28px !important;
-        padding: 28px 48px !important;
-        border-radius: 40px !important;
-        box-shadow: 0 6px 24px rgba(0,0,0,0.35) !important;
+    .calendly-badge-widget {
+        display: none !important;
     }
+    .custom-mobile-cta {
+        display: block !important;
+    }
+}
+@media (min-width: 769px) {
+    .custom-mobile-cta {
+        display: none !important;
+    }
+}
+.custom-mobile-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #F97316;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+    z-index: 9999;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    cursor: pointer;
+    border: none;
 }
 </style>
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<button class="custom-mobile-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chad-fts/videxp'});return false;">📞 Get Your 30-Topic Content Plan</button>
 <script type="text/javascript">
     window.onload = function() {
         Calendly.initBadgeWidget({
@@ -809,19 +832,6 @@ blockquote.quote-large {
             textColor: '#ffffff',
             branding: false
         });
-        
-        // Make button larger on mobile after Calendly loads
-        setTimeout(function() {
-            if (window.innerWidth <= 768) {
-                var badge = document.querySelector('.calendly-badge-content');
-                if (badge) {
-                    badge.style.fontSize = '22px';
-                    badge.style.padding = '20px 32px';
-                    badge.style.borderRadius = '35px';
-                    badge.style.boxShadow = '0 6px 24px rgba(0,0,0,0.35)';
-                }
-            }
-        }, 1000);
     }
 </script>
 </body></html>
