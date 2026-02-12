@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viral Video Blueprint | FTS</title>
+    <title>Data-Driven Viral Video Blueprint | FTS Growth Agency</title>
     
     <!-- SEO -->
-    <meta name="description" content="The Data-Driven Viral Video Blueprint: Thought Leadership Content Production with Multi-Channel Distribution. Learn how to turn one hour into 60+ posts.">
-    <meta property="og:title" content="Viral Video Blueprint | FTS">
+    <meta name="description" content="Turn one hour into 60+ posts across 6 platforms. The complete system for CEO content that drives real business results.">
+    <meta property="og:title" content="Data-Driven Viral Video Blueprint | FTS">
     <meta property="og:description" content="Turn one hour into 60+ posts across 6 platforms. The complete system for CEO content.">
     <meta property="og:type" content="website">
     
-    <!-- Calendly Widget CSS -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Calendly -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     
     <style>
@@ -21,38 +26,578 @@
             box-sizing: border-box;
         }
         
-        html, body {
-            height: 100%;
-            overflow: hidden;
+        :root {
+            --purple: #6366f1;
+            --purple-dark: #4f46e5;
+            --yellow: #fbbf24;
+            --yellow-dark: #f59e0b;
+            --dark: #1f2937;
+            --gray: #6b7280;
+            --light: #f9fafb;
         }
         
-        .notion-embed {
-            width: 100%;
-            height: 100vh;
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+            color: white;
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .hero .stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+        
+        .hero .stat {
+            text-align: center;
+        }
+        
+        .hero .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--yellow);
+        }
+        
+        .hero .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
             border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: var(--yellow-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(251, 191, 36, 0.3);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: var(--light);
+        }
+        
+        .section-header {
+            background: var(--purple);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 48px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .team-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .team-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+        
+        /* Results Section */
+        .results {
+            padding: 80px 0;
+        }
+        
+        .results h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .results .lead {
+            text-align: center;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 48px;
+            font-size: 1.1rem;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .result-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--purple);
+        }
+        
+        .result-card .metric {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--purple);
+            margin-bottom: 8px;
+        }
+        
+        .result-card .metric-label {
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .result-card .metric-detail {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 48px;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card blockquote {
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 24px;
+            line-height: 1.7;
+            color: var(--dark);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .testimonial-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .testimonial-info strong {
+            display: block;
+            font-size: 1rem;
+        }
+        
+        .testimonial-info span {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+        
+        /* Services */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 48px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .service-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--purple);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+        
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero .stats {
+                gap: 24px;
+            }
+            
+            .hero .stat-number {
+                font-size: 2rem;
+            }
+            
+            .team-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .team-avatar {
+                margin: 0 auto;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Notion Page Embed -->
-    <iframe 
-        class="notion-embed"
-        src="https://fts-services.notion.site/Data-Driven-Viral-Video-Blueprint-2f94696856bc8066993cc24b121697ae"
-        allowfullscreen>
-    </iframe>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Data-Driven Viral Video Blueprint</h1>
+            <p class="subtitle">Thought Leadership Content Production with Multi-Channel Distribution. Turn one hour into 60+ posts across 6 platforms.</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">1.6M+</div>
+                    <div class="stat-label">Views Generated</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">300K+</div>
+                    <div class="stat-label">Subscribers Added</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">42%</div>
+                    <div class="stat-label">Avg Email Open Rate</div>
+                </div>
+            </div>
+            
+            <a href="#" class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chad-fts/videxp'});return false;">📞 Get Your Free 30-Topic Content Plan</a>
+        </div>
+    </section>
     
-    <!-- Calendly Floating Button -->
+    <!-- About -->
+    <section class="about">
+        <div class="container">
+            <div class="section-header">ABOUT US</div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">CK</div>
+                    <div class="team-info">
+                        <h3>Chad Kaleky</h3>
+                        <p>Host of Top 5% "Failing to Success" podcast. Chad founded FTS after his ecommerce business Renewgoo scaled to over $30 million where he systematically automated operations.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">DH</div>
+                    <div class="team-info">
+                        <h3>Dana Howell</h3>
+                        <p>Host of the "Explain Yourself" podcast. Dana's last venture scaled to over $40 million in revenue through her expertise in product market fit and marketing strategy.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">HW</div>
+                    <div class="team-info">
+                        <h3>Dr. Hilda Wong</h3>
+                        <p>Founder of Content Dog specializing in high-quality, SEO content. What started as a way to fund her medical education turned into a multi-million dollar operation.</p>
+                    </div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-avatar">CV</div>
+                    <div class="team-info">
+                        <h3>Christian Velitchkov</h3>
+                        <p>Founded product and service businesses doing over $25 million to date. Notably 123 Baby Box, scaled through his paid advertising expertise.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results -->
+    <section class="results">
+        <div class="container">
+            <h2>Real Results for Real Clients</h2>
+            <p class="lead">We don't just create content—we build systems that generate qualified leads, grow audiences, and establish thought leadership.</p>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="metric">35K → 55K</div>
+                    <div class="metric-label">YouTube Subscribers in 200 Days</div>
+                    <div class="metric-detail">Alicia Katz Pollock - Royalwise Solutions. From 1,000 to 35,000+ subscribers using data-driven viral video strategies.</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="metric">12K+</div>
+                    <div class="metric-label">LinkedIn Engagement in 90 Days</div>
+                    <div class="metric-detail">Reena Strehle - Top 250 LinkedIn Influencer. Authentic content that truly takes your business to a whole new level.</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="metric">54+</div>
+                    <div class="metric-label">Qualified Meetings in 90 Days</div>
+                    <div class="metric-detail">Particle41 - Premium podcast outreach targeting CEOs of 50+ headcount companies in custom software development.</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="metric">15K</div>
+                    <div class="metric-label">Followers Added in 120 Days</div>
+                    <div class="metric-detail">Naomi Granger - NACAT Pros. Rapid audience growth through consistent, high-quality video content.</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="metric">0 → 35K</div>
+                    <div class="metric-label">Newsletter Subscribers in 6 Months</div>
+                    <div class="metric-detail">Financial newsletter with 42% open rate (vs 17-28% industry average). Complex finance topics handled with precision.</div>
+                </div>
+                
+                <div class="result-card">
+                    <div class="metric">12K</div>
+                    <div class="metric-label">AI Insights Subscribers in 90 Days</div>
+                    <div class="metric-detail">John Sviokla - GAI Insights. Thought leadership content in the AI and technology space.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <blockquote>"FTS/EY has been absolutely instrumental in taking our YouTube channel from 1,000 subscribers to 35,000 and counting. Their expertise in leveraging social media and reels has made a significant impact, and we're thrilled with the results."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AP</div>
+                        <div class="testimonial-info">
+                            <strong>Alicia Katz Pollock</strong>
+                            <span>Founder, Royalwise Solutions</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <blockquote>"Chad and Dana are amazing. They are genuine, authentic, and deliver incredible results. My experience with them has been nothing short of outstanding, and they truly take your business to a whole new level. I highly recommend them!"</blockquote>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RS</div>
+                        <div class="testimonial-info">
+                            <strong>Reena Strehle</strong>
+                            <span>Top 250 LinkedIn Influencer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <h2>What We Do</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎬</div>
+                    <h3>Video Production</h3>
+                    <p>Monthly recording sessions with high search-intent topics. Turn one hour into 60+ pieces of content.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Multi-Platform Distribution</h3>
+                    <p>YouTube, LinkedIn, Twitter/X, Instagram, TikTok, and more. One recording, six platforms.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎙️</div>
+                    <h3>Podcast Booking</h3>
+                    <p>Premium podcast outreach to get you booked on shows your target audience listens to.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📧</div>
+                    <h3>Newsletter Growth</h3>
+                    <p>High-converting newsletters with 40%+ open rates. Complex topics, maintained accuracy.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎤</div>
+                    <h3>Twitter Spaces & Events</h3>
+                    <p>Strategic gatherings on relevant topics. Build authority through live engagement.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>LinkedIn Lead Gen</h3>
+                    <p>High-volume outreach programs with custom targeting and scripts for consistent meeting flow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Go Viral?</h2>
+            <p>Get a personalized 30-topic content plan tailored to your industry and audience. No obligation, just pure value.</p>
+            <a href="#" class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chad-fts/videxp'});return false;">📞 Schedule Your Free Strategy Call</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 FTS Growth Agency. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Calendly -->
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script type="text/javascript">
-        window.onload = function() {
-            Calendly.initBadgeWidget({
-                url: 'https://calendly.com/chad-fts/videxp',
-                text: '📞 Get Your 30-Topic Content Plan',
-                color: '#6366f1',
-                textColor: '#ffffff',
-                branding: false
-            });
-        }
-    </script>
 </body>
 </html>
