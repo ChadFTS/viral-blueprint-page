@@ -809,6 +809,19 @@ blockquote.quote-large {
             textColor: '#ffffff',
             branding: false
         });
+        
+        // Make button larger on mobile after Calendly loads
+        setTimeout(function() {
+            if (window.innerWidth <= 768) {
+                var badge = document.querySelector('.calendly-badge-content');
+                if (badge) {
+                    badge.style.fontSize = '22px';
+                    badge.style.padding = '20px 32px';
+                    badge.style.borderRadius = '35px';
+                    badge.style.boxShadow = '0 6px 24px rgba(0,0,0,0.35)';
+                }
+            }
+        }, 1000);
     }
 </script>
 </body></html>
