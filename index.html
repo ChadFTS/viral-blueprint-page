@@ -792,14 +792,16 @@ blockquote.quote-large {
 /* Mobile: Center and enlarge the floating CTA button */
 @media (max-width: 768px) {
     .calendly-badge-widget {
-        right: 50% !important;
-        transform: translateX(50%) !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
         bottom: 20px !important;
     }
     .calendly-badge-widget .calendly-badge-content {
-        font-size: 16px !important;
-        padding: 16px 28px !important;
+        font-size: 18px !important;
+        padding: 18px 32px !important;
         border-radius: 30px !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
     }
 }
 </style>
